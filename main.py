@@ -35,11 +35,11 @@ def main():
     fuel_type = st.selectbox("Fuel Type", options=["Petrol", "Diesel", "CNG", "LPG", "Electric"])
     fuel_map = {"Petrol": 3, "Diesel": 0, "CNG": 1, "LPG": 2, "Electric": 4}
 
-    company = st.selectbox("Company", options=["Maruti", "Hyundai", "Honda", "Toyota", "Ford", "Mahindra","G Wagon"])
+    company = st.selectbox("Company", options=["Maruti", "Hyundai", "Honda", "Toyota", "Ford", "Mahindra",])
     company_map = {"Maruti": 4, "Hyundai": 2, "Honda": 1, "Toyota": 5, "Ford": 0, "Mahindra": 3}
 
     if st.button("Predict Price"):
-        model = CarPricePredictor("C:/Users/Sufyan Ajmal/Desktop/project/ClassProject/svm_model.pkl")
+       model = model = CarPricePredictor("svm_model.pkl")
         input_data = [year, kms_driven, fuel_map[fuel_type]]
         price = model.predict(input_data)
         st.success(f"Estimated Price: {round(price, 2)} PKR")
