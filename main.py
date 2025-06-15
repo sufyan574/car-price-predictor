@@ -39,7 +39,7 @@ def main():
     company_map = {"Maruti": 4, "Hyundai": 2, "Honda": 1, "Toyota": 5, "Ford": 0, "Mahindra": 3}
 
     if st.button("Predict Price"):
-       model = model = CarPricePredictor("svm_model.pkl")
+        model = model = CarPricePredictor("svm_model.pkl")
         input_data = [year, kms_driven, fuel_map[fuel_type]]
         price = model.predict(input_data)
         st.success(f"Estimated Price: {round(price, 2)} PKR")
